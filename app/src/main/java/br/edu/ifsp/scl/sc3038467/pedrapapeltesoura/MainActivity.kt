@@ -31,6 +31,9 @@ class MainActivity : AppCompatActivity() {
         rgJogadores.setOnCheckedChangeListener { _, checkedId ->
             ivApp2.visibility = if (checkedId == R.id.rbTresJogadores) View.VISIBLE else View.GONE
         }
+        findViewById<ImageButton>(R.id.ibPedra).setOnClickListener { jogar(Jogada.PEDRA) }
+        findViewById<ImageButton>(R.id.ibPapel).setOnClickListener { jogar(Jogada.PAPEL) }
+        findViewById<ImageButton>(R.id.ibTesoura).setOnClickListener { jogar(Jogada.TESOURA) }
     }
 
     private fun atualizarImagem(imageView: ImageView, jogada: Jogada) {
