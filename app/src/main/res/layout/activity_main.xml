@@ -1,19 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:gravity="center_horizontal">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:text="Selecione o modo de jogo:"
+        android:textSize="18sp"
+        android:textStyle="bold" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <RadioGroup
+        android:id="@+id/rgJogadores"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginVertical="16dp">
+
+        <RadioButton
+            android:id="@+id/rbDoisJogadores"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2 Jogadores"
+            android:checked="true" />
+
+        <RadioButton
+            android:id="@+id/rbTresJogadores"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="3 Jogadores"
+            android:layout_marginStart="16dp" />
+    </RadioGroup>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Jogadas do(s) Bot(s):"
+        android:layout_marginTop="16dp" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginVertical="16dp">
+
+        <ImageView
+            android:id="@+id/ivApp1"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="#E0E0E0" />
+
+        <ImageView
+            android:id="@+id/ivApp2"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginStart="16dp"
+            android:background="#E0E0E0"
+            android:visibility="gone" />
+    </LinearLayout>
+
+</LinearLayout>
