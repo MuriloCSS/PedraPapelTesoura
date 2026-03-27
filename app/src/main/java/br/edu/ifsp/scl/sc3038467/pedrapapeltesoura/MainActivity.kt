@@ -41,4 +41,17 @@ class MainActivity : AppCompatActivity() {
         }
         imageView.setImageResource(drawableId)
     }
+
+    private fun jogar(jogadaUsuario: Jogada) {
+        val jogadaApp1 = Jogada.entries.random()
+        atualizarImagem(ivApp1, jogadaApp1)
+
+        if (rgJogadores.checkedRadioButtonId == R.id.rbTresJogadores) {
+            val jogadaApp2 = Jogada.entries.random()
+            atualizarImagem(ivApp2, jogadaApp2)
+            tvResultado.text = motor.calcularResultado3Jogadores(jogadaUsuario, jogadaApp1, jogadaApp2)
+        } else {
+            tvResultado.text = motor.calcularResultado2Jogadores(jogadaUsuario, jogadaApp1)
+        }
+    }
 }
