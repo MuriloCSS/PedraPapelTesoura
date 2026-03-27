@@ -32,4 +32,13 @@ class MainActivity : AppCompatActivity() {
             ivApp2.visibility = if (checkedId == R.id.rbTresJogadores) View.VISIBLE else View.GONE
         }
     }
+
+    private fun atualizarImagem(imageView: ImageView, jogada: Jogada) {
+        val drawableId = when (jogada) {
+            Jogada.PEDRA -> R.drawable.pedra
+            Jogada.PAPEL -> R.drawable.papel
+            Jogada.TESOURA -> R.drawable.tesoura
+        }
+        imageView.setImageResource(drawableId)
+    }
 }
